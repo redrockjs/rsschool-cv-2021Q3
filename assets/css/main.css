@@ -57,7 +57,7 @@ hr {
     display: grid;
     grid-template-areas:
             "header header"
-            "aside article"
+            "main   main"
             "footer footer";
 
     grid-template-rows: 300px 1fr 80px;
@@ -78,12 +78,22 @@ hr {
     align-items: center;
 }
 
+.main {
+    grid-area: main;
+}
+
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: center;
+}
+
 .aside {
-    grid-area: aside;
+
 }
 
 .article {
-    grid-area: article;
+
 }
 
 .footer {
