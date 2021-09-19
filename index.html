@@ -5,6 +5,11 @@
     <link href="assets/styles/main.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
     <title>Valeriy Grunenko CV</title>
 </head>
 <body>
@@ -79,52 +84,75 @@
 
         <article class="article">
             <h2>About me</h2>
-                <p>
-                    I have over 15 years of experience in IT. My current job is an IT engineer in the
-                    power
-                    industry.
-                </p>
-                <p>
-                    I am regularly learning new technologies. I believe that a person should study all his life.
-                    At the moment I am studying front-end development using JavaScript, React-library in order to expand
-                    my
-                    skills and change the direction in IT.
+            <p>
+                I have over 15 years of experience in IT. My current job is an IT engineer in the
+                power
+                industry.
+            </p>
+            <p>
+                I am regularly learning new technologies. I believe that a person should study all his life.
+                At the moment I am studying front-end development using JavaScript, React-library in order to expand
+                my
+                skills and change the direction in IT.
 
-                </p>
-                <hr>
+            </p>
+            <hr>
 
-                <h2>Education</h2>
-                <p>
-                    University: Moscow Social Goverment University
-                </p>
-                <ul class="nomark-list">
-                    <li>
-                        Years: 1999-2004 <br>
-                        Automated information processing and control systems., engineer (Master of Computer Science)
-                    </li>
-                </ul>
-                <p>
-                    Cources:
-                </p>
-                <ul>
-                    <li>Cource Harvard CS50 (youtube)</li>
-                    <li>NDG Linux Unhatched by Cisco Networking Academy</li>
-                    <li>NDG Linux Essentials by Cisco NetNetworking Academy</li>
-                    <li>JavaScript https://learn.javascript.ru/</li>
-                    <li>Codewars - Javascript training</li>
-                </ul>
-                <hr>
+            <h2>Education</h2>
+            <p>
+                University: Moscow Social Goverment University
+            </p>
+            <ul class="nomark-list">
+                <li>
+                    Years: 1999-2004 <br>
+                    Automated information processing and control systems., engineer (Master of Computer Science)
+                </li>
+            </ul>
+            <p>
+                Cources:
+            </p>
+            <ul>
+                <li>Cource Harvard CS50 (youtube)</li>
+                <li>NDG Linux Unhatched by Cisco Networking Academy</li>
+                <li>NDG Linux Essentials by Cisco NetNetworking Academy</li>
+                <li>JavaScript https://learn.javascript.ru/</li>
+                <li>Codewars - Javascript training</li>
+            </ul>
+            <hr>
 
-                <h2>Code example</h2>
-                <pre class="cv-code-example">
-                <code>
+            <h2>Code example</h2>
+            <pre class="cv-code-example">
+                <code class="language-javascript hljs">
 let hello = (name) =>
         console.log(`Hello ${name}`);
 
      hello("friends!");
                 </code>
             </pre>
-                <hr>
+            <hr>
+            <h2>Work examples</h2>
+            <div class="work-block">
+                <div>
+                    <a href="https://iscloudly.web.app">
+                        <img src="./assets/images/iscloudly-react-app.jpg" width="300"
+                             alt="isCloudly - My React Web App">
+                    </a>
+                    <p>It is my test project. </p>
+                    <p>
+                        It use <strong>React library</strong> for interface, <strong>Firebase Database</strong> for save
+                        user favorite citys and <strong>Google Firebase</strong> for hosting this web-app.
+                    </p>
+                </div>
+                <div>
+                    <a href="https://github.com/redrockjs/react-social-network">
+                        <img src="./assets/images/social-network-it-kamasutra.jpg" width="300"
+                             alt="Meet - soctial network @IT-Kamasutra">
+                    </a>
+                    <p>It is the IT-Kamasutra demo project</p>
+                    <p>My first demo-project on React Library. The simple demo for simple task.</p>
+                </div>
+            </div>
+            <hr>
         </article>
     </main>
     <footer class="footer">
