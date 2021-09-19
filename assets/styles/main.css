@@ -260,3 +260,7 @@ hr {
 .work-block {
     display: block;
 }
+
+.nomark-list {
+    list-style-type: none;
+}
