@@ -1,28 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Valeriy Grunenko</title>
+    <link href="assets/styles/main.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+        console.log(`
+        Самооценка:
+
+        1. Вёрстка валидная "Document checking completed. No errors or warnings to show." +10
+        2. Вёрстка семантическая (header,footer, main, nav, section, h1-h5 ) +20
+        3. Для оформления СV используются css-стили +10
+        4. Контент размещается в блоке по центру +10
+        5. Вёрстка адаптивная +10
+        6. Адаптивное бургер меню, плавная прокрутка по якорям +10
+        7. На на странице СV присутствует изображение - фото или аватарка автора +10
+        8. Kонтакты для связи и перечень навыков оформлены в виде списка ul > li +10
+        9. CV содержит контакты, о себе, навыки, образовании и уровне английского +10
+        10. CV содержит пример кода +10
+        11. CV содержит изображения-ссылки на выполненные проекты
+        12. CV выполнено на английском языке +10
+        13. Выполнены требования к Pull Request,  выполнена самооценка +10
+        14. Дизайн, оформление, качество выполнения CV не ниже чем в примерах CV +10
+
+        Итоговый бал: 150
+        `)
+    </script>
+    <title>Valeriy Grunenko CV</title>
 </head>
 <body>
+
 <div class="container">
-    <header class="header header-wrapper">
+    <header class="header">
         <div class="header-avatar-block">
-            <img class="avatar-img" src="./assets/images/avatar.jpg" alt="">
+            <img class="header-avatar-img" src="./assets/images/avatar.jpg" alt="Valeriy Grunenko">
         </div>
-        <div class="header-title-block">
+        <div class="header-person-block">
+            <!-- (A) MENU WRAPPER -->
+            <nav id="hamnav">
+                <!-- (B) THE HAMBURGER -->
+                <label class="hamburger" for="hamburger">&#9776; MENU</label>
+                <input type="checkbox" id="hamburger"/>
+
+                <!-- (C) MENU ITEMS -->
+                <div id="hamitems">
+                    <a href="#contacts">Contact</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#aboutme">About</a>
+                    <a href="#code">Code</a>
+                    <a href="#projects">Projects</a>
+                </div>
+            </nav>
             <br/>
             <h1>Valeriy Grunenko</h1>
             <p class="header-title-profession"> Junior Software Engenier</p>
+
         </div>
     </header>
-    <main class="main main-wrapper">
+    <main class="main">
         <aside class="aside">
-            <section class="aside-block">
+
+            <section id="contacts" class="aside-block">
                 <h2>Contacts</h2>
                 <ul class="nomark-list">
                     <li><i class="fas fa-street-view"></i>&nbsp; Sochi, Russia</li>
@@ -48,7 +92,7 @@
                 <hr/>
             </section>
 
-            <section class="aside-block">
+            <section id="skills" class="aside-block">
                 <h2>Skills</h2>
                 <ul>
                     <li>HTML</li>
@@ -76,30 +120,24 @@
                 </ul>
                 <hr>
             </section>
-            <div>
-
-            </div>
         </aside>
 
-        <article class="article">
-            <section class="article-block">
+        <div class="content">
+            <article id="aboutme">
                 <h2>About me</h2>
                 <p>
-                    I have over 15 years of experience in IT. My current job is an IT engineer in the
-                    power
-                    industry.
+                    I have over 15 years of experience in IT as System Engineer. My current job is an IT engineer in the
+                    power industry.
                 </p>
                 <p>
                     I am regularly learning new technologies. I believe that a person should study all his life.
                     At the moment I am studying front-end development using JavaScript, React-library in order to expand
-                    my
-                    skills and change the direction in IT.
-
+                    my skills and change the direction in IT.
                 </p>
                 <hr>
-            </section>
+            </article>
 
-            <section class="article-block">
+            <section id="education">
                 <h2>Education</h2>
                 <p>
                     University: Moscow Social Goverment University
@@ -122,22 +160,75 @@
                 </ul>
                 <hr>
             </section>
-            <section class="article-block">
+            <section id="code">
                 <h2>Code example</h2>
-                <pre>
-                <code>
-           let hello = (name) => console.log(`Hello ${name}`);
+                <p>It is a Codewars task - <a class="page-link" href="https://www.codewars.com/kata/57eb8fcdf670e99d9b000272">
+                    High Scoring Word
+                </a></p>
+                <p>Given a string of words, you need to find the highest scoring word.</p>
+                <p>Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3
+                    etc.</p>
+                <p>You need to return the highest scoring word as a string.</p>
+                <p>If two words score the same, return the word that appears earliest in the original string.</p>
+                <p> All letters will be lowercase and all inputs will be valid.</p>
+                <pre class="cv-code-example">
+                <code class="language-javascript hljs">
+let costOfSymbol = (symb) => {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    const alphabetArr = alphabet.split("");
+    return alphabetArr.indexOf(symb) + 1
+}
 
-           hello("friends!");
+function getIndexOfMaxOfArray(numArray) {
+    return numArray.indexOf(Math.max.apply(null, numArray));
+}
+
+function high(x) {
+    const wordsArr = x.split(" ");
+    console.log(wordsArr);
+
+    let cost = wordsArr.map(el => {
+        let symbArr = el.split("")
+        let costsArr = symbArr.map(el => costOfSymbol(el))
+        return costsArr.reduce((a, b) => a + b)
+    })
+
+    return wordsArr[getIndexOfMaxOfArray(cost)]
+}
                 </code>
             </pre>
-            <hr>
+                <hr>
             </section>
-        </article>
-    </main>
+            <section id="projects">
+                <h2>My projects</h2>
+                <div class="work-block">
+                    <p class="projects">
+                        <a href="https://iscloudly.web.app" target="_blank">
+                            <img class="projects-img" src="./assets/images/iscloudly-react-app.jpg" width="300"
+                                 alt="isCloudly - My React Web App">
+                        </a>
+                    </p>
+                    <p>It is my test project. </p>
+                    <p>
+                        It use <strong>React library</strong> for interface, <strong>Firebase Database</strong> for save
+                        user favorite citys and <strong>Google Firebase</strong> for hosting this web-app.
+                    </p>
+                    <p class="projects">
+                        <a href="https://github.com/redrockjs/react-social-network" target="_blank">
+                            <img class="projects-img" src="./assets/images/social-network-it-kamasutra.jpg" width="300"
+                                 alt="Meet - soctial network @IT-Kamasutra">
+                        </a>
+                    </p>
+                    <p>It is the IT-Kamasutra demo project</p>
+                    <p>My first demo-project on React Library. The simple demo for simple task.</p>
 
-    <footer class="footer footer-wrapper">
-        <div>
+                </div>
+                <hr>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-left">
             <p class="footer-paragraph">
                 <a class="page-link" href="https://github.com/redrockjs/">
                     Visit my GitHub
@@ -145,16 +236,17 @@
                 </a>
             </p>
         </div>
-        <div>
+        <div class="footer-center">
             <a href="https://rs.school/js/">
                 <p class="footer-paragraph">
                     <img src="./assets/images/rs_school_js.svg" width="72" alt="Visit RS School">
                 </p>
             </a>
         </div>
-        <div>
+        <div class="footer-right">
             <p class="footer-paragraph">&copy; 2021</p>
         </div>
     </footer>
 </div>
 </body>
+</html>
