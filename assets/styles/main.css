@@ -31,7 +31,7 @@
         padding: 10px 20px;
     }
 
-    .article {
+    .content {
         padding: 10px 20px;
     }
 
@@ -134,7 +134,7 @@
 }
 
 @media (min-width: 421px) {
-    .article {
+    .content {
         padding: 10px 20px;
     }
     .work-block > div {
